@@ -1,0 +1,112 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Administrator",
+      "email": "admin@admin.com",
+      "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "name": "Juan Perez",
+      "email": "juan.perez@organizer.com",
+      "password": "f6ccb3e8d609012238c0b39e60b2c9632b3cdede91e035dad1de43469768f4cc",
+      "role": "organizer"
+    },
+    {
+      "id": "3",
+      "name": "Ana Garcia",
+      "email": "ana.garcia@guest.com",
+      "password": "e82827b00b2ca8620beb37f879778c082b292a52270390cff35b6fe3157f4e8b",
+      "role": "guest"
+    },
+    {
+      "name": "Antonio Santiago",
+      "email": "antonio.santiago@organizer.com",
+      "password": "ac761772eb0f6d262fb4ccd68795f57b0462ca4f8721ce99eeb264b63a43bda7",
+      "role": "organizer",
+      "id": "4"
+    },
+    {
+      "name": "Maria Paula",
+      "email": "maria.paula@organizer.com",
+      "password": "626e3c805e77eeb472c42c6be607be2af7ac5c08fd7050f278e0330fe81abf57",
+      "role": "organizer",
+      "id": "5"
+    },
+    {
+      "name": "Carlos Andres",
+      "email": "carlos.andres@guest.com",
+      "password": "ac9c2c34c9f7ad52528c3422af40a66e2e24aaf2a727831255413c9470158984",
+      "role": "guest",
+      "id": "6"
+    },
+    {
+      "name": "Juan Pablo",
+      "email": "juan.pablo@organizer.com",
+      "password": "f6ccb3e8d609012238c0b39e60b2c9632b3cdede91e035dad1de43469768f4cc",
+      "role": "organizer",
+      "id": "7"
+    },
+    {
+      "name": "Andres Montano",
+      "email": "andres.montano@gmail.com",
+      "password": "f6af6e4d6c9315f6a693f27a4868f405edf15d97cbf661d8ac29071b2b6b5961",
+      "role": "guest",
+      "id": "8"
+    }
+  ],
+  "events": [
+    {
+      "title": "Event at the Park",
+      "description": "A fun day at the park with games and activities.",
+      "category": "Outdoor",
+      "organizer": "Juan Perez",
+      "capacity": 18,
+      "id": "1",
+      "date": "2025-07-20",
+      "time": "10:00",
+      "registered": [
+        "carlos.andres@guest.com"
+      ]
+    },
+    {
+      "title": "Art Workshop",
+      "description": "A creative workshop for art enthusiasts.",
+      "category": "Indoor",
+      "organizer": "Maria Paula",
+      "capacity": 22,
+      "id": "2",
+      "date": "2025-07-25",
+      "time": "14:00",
+      "registered": [
+        "ana.garcia@guest.com"
+      ]
+    },
+    {
+      "title": "Cooking Class",
+      "description": "Learn to cook delicious meals.",
+      "category": "Culinary",
+      "organizer": "Antonio Santiago",
+      "capacity": 18,
+      "id": "3",
+      "date": "2025-08-01",
+      "time": "16:30",
+      "registered": [
+        "ana.garcia@guest.com",
+        "carlos.andres@guest.com"
+      ]
+    },
+    {
+      "title": "Event with no capacity",
+      "description": "Sample event with no slots.",
+      "category": "General",
+      "organizer": "Juan Perez",
+      "capacity": 0,
+      "id": "5",
+      "date": "2025-07-30",
+      "time": "09:00"
+    }
+  ]
+}
