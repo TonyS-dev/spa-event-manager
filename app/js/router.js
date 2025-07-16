@@ -6,6 +6,7 @@
 
 import { auth } from './auth.js';
 import { ui } from './ui.js'; // Import the new UI manager
+import { api } from './api.js'
 
 // Import all view functions
 import { showLogin } from './views/login.js';
@@ -39,9 +40,25 @@ const routes = {
 /**
  * Main routing function. Triggered on page load and hash changes.
  */
-export function router() {
+export async function router() {
     const path = location.hash || '#/login';
-    const isAuthenticated = auth.isAuthenticated();
+    let isAuthenticated = auth.isAuthenticated();
+    let user = auth.getUser();
+
+    // Verify if the user is authenticated and exists in the database
+    if (isAuthenticated && user) {
+        try {
+            const verifiedUser = await api.get(`/users?email=${user.email}`);
+            if (!verifiedUser.length || verifiedUser[0].role !== user.role) {
+                // Invalid user
+                throw new Error()
+            } 
+        } catch {
+            localStorage.removeItem('user');
+            isAuthenticated = false;
+            user = null;
+        }
+    }
 
     // On logout, the 'user' is removed from localStorage.
     // The next time router() runs, it will see !isAuthenticated and reset the layout.

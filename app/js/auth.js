@@ -42,14 +42,31 @@ export const auth = {
     },
     // Returns true if a user is authenticated
     isAuthenticated: () => {
-        // Return true if there is a user in localStorage
-        return !!localStorage.getItem('user'); // Returns true if a user is stored
+        const user = localStorage.getItem('user');
+        if (!user) return false;
+        try {
+            const parsed = JSON.parse(user);
+            // Validate that the user has the required fields
+            if (!parsed.email || !parsed.role) throw new Error();
+            // Validate the user against the database
+            return true;
+        } catch {
+            localStorage.removeItem('user');
+            return false;
+        }
     },
     // Returns the authenticated user
     getUser: () => {
-        // Return the user stored in localStorage (or null)
         const user = localStorage.getItem('user');
-        return user ? JSON.parse(user) : null; // Returns the parsed user or null if not found
+        if (!user) return null;
+        try {
+            const parsed = JSON.parse(user);
+            if (!parsed.email || !parsed.role) throw new Error();
+            return parsed;
+        } catch {
+            localStorage.removeItem('user');
+            return null;
+        }
     },
     // Hashes a text using SHA-256
     hashText: async (text) => {
