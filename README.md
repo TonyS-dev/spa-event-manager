@@ -7,11 +7,10 @@ A modern, full-featured **Single-Page Application (SPA)** for managing events in
 ## 📋 Coder Information
 
 - **Name:** Antonio Santiago
-- **Clan:** Macondo
 - **Email:** santiagor.acarlos@gmail.com
 - **GitHub:** [TonyS-dev](https://github.com/TonyS-dev)
 - **CodePen:** [TonyS-dev](https://codepen.io/TonyS-dev)
-- **ID:** 1192796292
+
 
 ### 📋 Instructions
 
